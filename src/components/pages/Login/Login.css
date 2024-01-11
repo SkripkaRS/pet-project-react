@@ -1,0 +1,56 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    height: 30px;
+    padding: 16px;
+    background-color: rgb(242, 165, 10);
+}
+
+span {
+    text-transform: uppercase;
+}
+
+.content {
+    margin-top: 52px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.subtitle {
+    margin-bottom: 52px;
+    color: rgb(242, 165, 10);
+    word-spacing: 6px;
+}
+
+.form-title {
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: grey;
+    word-spacing: 4px;
+}
+
+.submit-btn {
+    margin-top: 8px;
+    font-size: 18px;
+}
+
+input {
+    font-size: 16px;
+    line-height: 30px;
+    padding: 2px 6px;
+}
+
+input::placeholder {
+    font-size: 16px;
+    color: #888;
+    line-height: inherit;
+}
+
+.error-message {
+    padding: 2px;
+    color: red;
+    font-size: 14px;
+}
