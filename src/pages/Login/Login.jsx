@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import "./Login.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useContext } from "react";
-import { UserContext } from "../../../context/UserContextInfo";
+import { UserContext } from "../../context/UserContextInfo";
 
 const Login = () => {
   const { login, setLogin } = useContext(UserContext);
@@ -20,7 +20,7 @@ const Login = () => {
 
     return errors;
   };
-  
+
   return (
     <div>
       <div className="header">
@@ -32,7 +32,7 @@ const Login = () => {
           Straight out of the oven, straight to you
         </div>
         <div className="form">
-          <div className="form-title">Welcome! Please startby telling us your name:</div>
+          <div className="form-title">Welcome! Please start by telling us your name:</div>
           <Formik initialValues={{ login }} onSubmit={onSubmit} validate={validate}>
             <Form>
               <div>

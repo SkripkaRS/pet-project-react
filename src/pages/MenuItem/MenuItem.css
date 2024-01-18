@@ -1,0 +1,57 @@
+.menu {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgrey;
+    font-family: sans-serif;
+}
+
+.menu-info {
+    display: flex;
+    padding: 8px 0;
+    width: 700px;
+    height: 100px;
+}
+
+img {
+    width: 120px;
+}
+
+.description {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: grey;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.ingridients {
+    margin-top: -16px;
+    font-style: italic;
+}
+
+span {
+    text-transform: uppercase;
+}
+
+.menu-action {
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.action-btn {
+    padding: 8px 18px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    background: rgb(242, 165, 10);
+    text-transform: uppercase;
+}
+
