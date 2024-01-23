@@ -1,7 +1,7 @@
 import React, { memo, useContext, useEffect, useState } from "react";
+import MenuItem from "../../components/MenuItem/MenuItem";
 import { MENU_API } from "../../constants";
 import { UserContext } from "../../context/UserContextInfo";
-import MenuItem from "../MenuItem/MenuItem";
 import "./Menu.css";
 
 const Menu = () => {
