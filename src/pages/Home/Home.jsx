@@ -4,7 +4,7 @@ import Counter from "../../components/counter/Counter";
 const Home = () => {
   return (
     <div>
-      <Counter />
+      {/* <Counter /> */}
     </div>
   );
 };

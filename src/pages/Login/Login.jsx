@@ -23,9 +23,6 @@ const Login = () => {
 
   return (
     <div>
-      <div className="header">
-        <span>Pizza day</span>
-      </div>
       <div className="content">
         <div className="title">The best pizza</div>
         <div className="subtitle">

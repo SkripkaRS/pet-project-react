@@ -1,0 +1,42 @@
+.cart-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.item-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.back-btn {
+    margin-right: 30%;
+    align-items: flex-start;
+    cursor: pointer;
+    color: rgb(89, 89, 249);
+    display: flex;
+    text-transform: none;
+    justify-content: center;
+}
+
+.order-btn, .clear-btn {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    padding: 8px 18px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    background: rgb(242, 165, 10);
+    text-transform: uppercase;
+}
+
+.clear-btn {
+    background: white;
+    border: 1px solid lightgrey;
+    color: grey;
+}

@@ -1,52 +1,41 @@
-.menu {
+.cart {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid lightgrey;
     font-family: sans-serif;
+    font-weight: bold;
 }
 
-.menu-info {
+.cart-info {
     display: flex;
     padding: 8px 0;
-    width: 700px;
-    height: 100px;
+    width: 300px;
 }
 
 img {
     width: 120px;
 }
 
-.description {
+.cart-description {
     padding: 8px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 4px;
     justify-content: space-between;
     align-items: flex-start;
     color: grey;
 }
 
-.name {
-    font-weight: bold;
-}
-
-.ingridients {
-    margin-top: -16px;
-    font-style: italic;
-}
-
-span {
-    text-transform: uppercase;
-}
-
-.menu-action {
-    margin-bottom: 8px;
+.cart-action {
+    padding-bottom: 8px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: flex-end;
+    gap: 16px;
+
 }
 
 .action-btn {
-    width: 200px;
     cursor: pointer;
     padding: 8px 18px;
     font-size: 14px;
@@ -61,3 +50,6 @@ span {
     cursor: default;
 }
 
+.increment, .decrement {
+    width: 45px;
+}

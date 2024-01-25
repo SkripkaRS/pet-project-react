@@ -9,3 +9,24 @@ a {
 .active {
     color: red;
 }
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    height: 30px;
+    padding: 16px;
+    background-color: rgb(242, 165, 10);
+}
+
+.title {
+    width: 90%;
+}
+
+.cart-image {
+    width: 30px;
+    cursor: pointer;
+}
