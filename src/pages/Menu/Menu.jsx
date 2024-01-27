@@ -1,42 +1,29 @@
-import React, { memo, useContext, useEffect, useState } from "react";
+import React, { memo, useContext, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import MenuItem from "../../components/MenuItem/MenuItem";
-import { MENU_API } from "../../constants";
 import { UserContext } from "../../context/UserContextInfo";
+import { getMenuItems } from "../../redux/slices/menuSlice";
 import "./Menu.css";
 
 const Menu = () => {
   const { login } = useContext(UserContext);
 
-  const [menu, setMenu] = useState([]);
+  const dispatch = useDispatch();
 
-  const [isLoading, setIsLoading] = useState(true);
+  const { menuItems, isError, isLoading } = useSelector((state) => state.menu);
 
   useEffect(() => {
-    const getMenu = async () => {
-      if (login) {
-        try {
-          const res = await fetch(MENU_API);
-
-          if (!res.ok) {
-            throw new Error("Failed to fetch");
-          }
-
-          const { data } = await res.json();
-
-          setMenu(data);
-
-          setIsLoading(false);
-        } catch (e) {
-          console.error("error", e.message);
-        }
-      }
-    };
-
-    getMenu();
-  }, [login]);
+    if (login) {
+      dispatch(getMenuItems());
+    }
+  }, [login, dispatch]);
 
   if (!login) {
     return <h1>Please enter login</h1>;
+  }
+
+  if (isError) {
+    return <h1>Error message</h1>;
   }
 
   if (isLoading) {
@@ -46,11 +33,12 @@ const Menu = () => {
   return (
     <div>
       <h1>List of menu:</h1>
-      {menu.map((menu) => (
-        <div className="menu-container" key={menu.id}>
-          <MenuItem menu={menu} />
-        </div>
-      ))}
+      {!!menuItems &&
+        menuItems.map((menu) => (
+          <div className="menu-container" key={menu.id}>
+            <MenuItem menu={menu} />
+          </div>
+        ))}
     </div>
   );
 };
