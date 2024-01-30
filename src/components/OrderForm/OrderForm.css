@@ -1,0 +1,10 @@
+.submit-btn {
+    cursor: pointer;
+    padding: 8px 18px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    background: rgb(242, 165, 10);
+    text-transform: uppercase;
+}

@@ -6,6 +6,7 @@ import Menu from "./pages/Menu/Menu";
 import Cart from "./pages/Cart/Cart";
 import cartImage from "../src/assets/icons/cart.png";
 import Users from "./pages/Users/Users";
+import NewOrder from "./pages/NewOrder/NewOrder";
 
 function App(): React.FC {
   const navigate = useNavigate();
@@ -39,6 +40,7 @@ function App(): React.FC {
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/users" element={<Users />}></Route>
+        <Route path="/order/new" element={<NewOrder />}></Route>
       </Routes>
     </div>
   );

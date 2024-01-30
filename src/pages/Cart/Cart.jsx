@@ -16,8 +16,8 @@ const Cart = () => {
     navigate("/menu");
   };
 
-  const handleOrder = () => {
-    console.log("Order");
+  const handleNavigateToOrder = () => {
+    navigate("/order/new");
   };
 
   const handleClearCart = () => {
@@ -37,7 +37,7 @@ const Cart = () => {
         </div>
       ))}
       <div className="cart-action">
-        <button className="order-btn" onClick={handleOrder}>
+        <button className="order-btn" onClick={handleNavigateToOrder}>
           ORDER PIZZAS
         </button>
         <button className="clear-btn" onClick={handleClearCart}>
