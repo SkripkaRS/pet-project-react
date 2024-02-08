@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { MENU_API } from "../../constants";
+import { GET_MENU_API } from "../../constants";
 
 const initialState = {
   menuItems: [],
@@ -9,7 +9,7 @@ const initialState = {
 
 const getMenuItems = createAsyncThunk("menu/getMenuItems", async () => {
   try {
-    const response = await fetch(MENU_API);
+    const response = await fetch(GET_MENU_API);
     if (!response.ok) {
       throw new Error("Failed to fetch");
     }

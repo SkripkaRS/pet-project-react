@@ -1,4 +1,4 @@
-import "./App.css";
+import styles from "./App.module.scss";
 import { NavLink, Routes, Route, useNavigate } from "react-router-dom";
 import Login from "./pages/Login/Login";
 import Home from "./pages/Home/Home";
@@ -7,6 +7,7 @@ import Cart from "./pages/Cart/Cart";
 import cartImage from "../src/assets/icons/cart.png";
 import Users from "./pages/Users/Users";
 import NewOrder from "./pages/NewOrder/NewOrder";
+import OrderDetails from "./components/OrderDetails/OrderDetails";
 
 function App(): React.FC {
   const navigate = useNavigate();
@@ -16,13 +17,13 @@ function App(): React.FC {
   };
 
   return (
-    <div className="app">
-      <div className="header">
-        <div className="title">
+    <div className={styles.app}>
+      <div className={styles.header}>
+        <div className={styles.title}>
           <span>Pizza day</span>
         </div>
         <img
-          className="cart-image"
+          className={styles.cartImage}
           onClick={handleNavigateToCart}
           src={cartImage}
           alt=""
@@ -41,6 +42,7 @@ function App(): React.FC {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/users" element={<Users />}></Route>
         <Route path="/order/new" element={<NewOrder />}></Route>
+        <Route path="/order/:id" element={<OrderDetails />}></Route>
       </Routes>
     </div>
   );

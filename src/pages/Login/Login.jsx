@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import "./Login.css";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContextInfo";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { validationLoginSchema } from "../../validationSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Input from "../../components/Input/Input";
@@ -36,13 +36,7 @@ const Login = () => {
             Welcome! Please start by telling us your name:
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <Controller
-              name="login"
-              control={control}
-              render={({ field, fieldState: { error } }) => (
-                <Input label="Login" error={error?.message} {...field} />
-              )}
-            />
+            <Input label="Login" control={control} name="login" />
 
             <button disabled={!isValid} className="submit-btn" type="submit">
               Submit

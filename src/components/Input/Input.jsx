@@ -1,16 +1,23 @@
-import React, { forwardRef } from "react";
+import React from "react";
+import { useController } from "react-hook-form";
 import "./Input.css";
 
-const Input = forwardRef(({ label, error, ...props }, ref) => (
-  <div className="input-container">
-    <div className="field">
-      <div className="input">
-        <label>{label}</label>
-        <input ref={ref} {...props} />
+const Input = (props) => {
+  const { field, fieldState } = useController(props);
+
+  const { label } = props;
+
+  return (
+    <div className="input-container">
+      <div className="field">
+        <div className="input">
+          <label>{label}</label>
+          <input {...field} />
+        </div>
+        {fieldState.error && <p className="error">{fieldState.error.message}</p>}
       </div>
-      {error && <p className="error">{error}</p>}
     </div>
-  </div>
-));
+  );
+};
 
 export default Input;

@@ -1,13 +1,20 @@
-import React, { forwardRef } from "react";
+import React from "react";
+import { useController } from "react-hook-form";
 import "./Checkbox.css";
 
-const Checkbox = forwardRef(({ label, error, ...props }, ref) => (
-  <div>
-    <div className="checkbox-field">
-      <input type="checkbox" ref={ref} {...props} />
-      <label>{label}</label>
+const Checkbox = (props) => {
+  const { field } = useController(props);
+
+  const { label } = props;
+
+  return (
+    <div>
+      <div className="checkbox-field">
+        <input type="checkbox" {...field} />
+        <label>{label}</label>
+      </div>
     </div>
-  </div>
-));
+  );
+};
 
 export default Checkbox;

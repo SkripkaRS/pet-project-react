@@ -1,10 +1,10 @@
 import UserItem from "../../components/UserItem/UserItem";
-import { USERS_API } from "../../constants";
+import { GET_USERS_API } from "../../constants";
 import useFetch from "../../hooks/useFetch";
 import "./User.css";
 
 const Users = () => {
-  const { isLoading, isError, data: users } = useFetch(USERS_API);
+  const { isLoading, isError, data: users } = useFetch(GET_USERS_API);
 
   if (isLoading) return <h1>Loading ...</h1>;
 
