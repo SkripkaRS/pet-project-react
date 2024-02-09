@@ -1,13 +1,17 @@
 import styles from "./App.module.scss";
 import { NavLink, Routes, Route, useNavigate } from "react-router-dom";
-import Login from "./pages/Login/Login";
-import Home from "./pages/Home/Home";
-import Menu from "./pages/Menu/Menu";
-import Cart from "./pages/Cart/Cart";
 import cartImage from "../src/assets/icons/cart.png";
-import Users from "./pages/Users/Users";
-import NewOrder from "./pages/NewOrder/NewOrder";
-import OrderDetails from "./components/OrderDetails/OrderDetails";
+import { lazy, Suspense } from "react";
+
+const HomeLazy = lazy(() => import("./pages/Home/Home"));
+const MenuLazy = lazy(() => import("./pages/Menu/Menu"));
+const CartLazy = lazy(() => import("./pages/Cart/Cart"));
+const LoginLazy = lazy(() => import("./pages/Login/Login"));
+const UsersLazy = lazy(() => import("./pages/Users/Users"));
+const NewOrderLazy = lazy(() => import("./pages/NewOrder/NewOrder"));
+const OrderDetailsLazy = lazy(() =>
+  import("./components/OrderDetails/OrderDetails"),
+);
 
 function App(): React.FC {
   const navigate = useNavigate();
@@ -35,15 +39,17 @@ function App(): React.FC {
         <NavLink to="/login">Login</NavLink>
         <NavLink to="/users">Users</NavLink>
       </nav>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/menu" element={<Menu />}></Route>
-        <Route path="/cart" element={<Cart />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/users" element={<Users />}></Route>
-        <Route path="/order/new" element={<NewOrder />}></Route>
-        <Route path="/order/:id" element={<OrderDetails />}></Route>
-      </Routes>
+      <Suspense fallback={<h1>Loading ...</h1>}>
+        <Routes>
+          <Route path="/" element={<HomeLazy />}></Route>
+          <Route path="/menu" element={<MenuLazy />}></Route>
+          <Route path="/cart" element={<CartLazy />}></Route>
+          <Route path="/login" element={<LoginLazy />}></Route>
+          <Route path="/users" element={<UsersLazy />}></Route>
+          <Route path="/order/new" element={<NewOrderLazy />}></Route>
+          <Route path="/order/:id" element={<OrderDetailsLazy />}></Route>
+        </Routes>
+      </Suspense>
     </div>
   );
 }
